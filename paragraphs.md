@@ -88,9 +88,7 @@ As the developer, you need to make the call. I'd advise to make it early on.
 
 ---
 
-![fit left](images/body.png)
-
-![fit right](images/body_split.png)
+![fit](images/body_split.png)
 
 ^ Detail pages
 
