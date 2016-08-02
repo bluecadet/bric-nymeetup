@@ -111,20 +111,6 @@ Youtube link
 
 ---
 
-# Common bundles
-
-- Basic Text
-- Two column Text (with Image);
-- Image
-- Video
-- Media
-- View reference
-- Block reference
-
-^ Here is a short list just to get your mind going.
-
----
-
 # Going beyond the basics
 
 > You can also add custom option fields and do conditional coding in your CSS, JS and preprocess functions so that end-users can have more control over the look and feel of each item. This is way much cleaner and stable than adding inline CSS or classes inside the body field's source.
