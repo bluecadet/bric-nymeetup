@@ -355,7 +355,7 @@ ___
 
 ---
 
-##More hybrid approach success
+##Hybrid approach: more success
 
 ![inline](videos/education-courses.mov)
 
@@ -369,15 +369,15 @@ ___
 
 ---
 
-#Hybrid approach failure
-
+##Hybrid approach: less success
+### 
 ##Blog
 
 - Ended up recreating functionality
-  - Pagination
-  - View, filters, attachments
-- Extra work for marginal returns
+  - Pagination, view, filters, attachments
+- Performance on par w/ views
 - More difficult to maintain
+- Benefits didn't ouweight drawbacks
 - Ultimately scrapped
 
 ---
