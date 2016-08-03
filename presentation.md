@@ -1,3 +1,5 @@
+autoscale: true
+
 # BRIC Website - Paragraphs + Hybrid Headless Calendar
 
 ### Pete Inge, Will Vedder
@@ -32,7 +34,7 @@
 
 #BRIC Overview
 
--BBrooklyn-based public arts organization
+-Brooklyn-based public arts organization
 -Public media education
 -Lots of quality events,performances, exhibitions
 -Public access television
@@ -60,8 +62,17 @@
 
 ^ Will
 
+
 ---
 
+#🤔
+
+^Who here has implemented a headless setup?
+
+^...with success?
+
+---
+ 
 #Headless/Decoupled Drupal
 
 Hard separation between theming layer and rest of CMS. Drupal acts as an API to a front-end framework like React or Angular.
@@ -90,9 +101,6 @@ Hard separation between theming layer and rest of CMS. Drupal acts as an API to 
 
 -Many more...
 
-^Comes in many flavors
-
-^This talk will be focusing on the first two
 
 ---
 
@@ -102,28 +110,25 @@ Hard separation between theming layer and rest of CMS. Drupal acts as an API to 
 
 No hard separation. Drupal handles data processing and theming.
 
-Think: most Drupal sites now. Business as usual.
-
-^For the sake of comparison
-
 ---
-#Non-headless pros :thumbsup:
+
+![left fit](images/traditional-diagram.png)
+
+##Non-headless
+
+###Pros:thumbsup:
 
 - Likely already pretty good at it
 
 - Everything under the hood already
 
----
-
-#Non-headless cons  :thumbsdown:
+###Cons:thumbsdown:
 
 - Slow and expensive async interactions
 
 - Often difficult to customize markup of UI elements
 
-- Modules are usually great but difficult to extend
-
-- Modules blur data-theming line
+^For the sake of comparison
 
 ---
 
@@ -137,28 +142,26 @@ Think: Single page apps (SPAs).
 
 ---
 
-#Fully decoupled pros :thumbsup:
+
+![left fit](images/full-diagram.png)
+##Fully decoupled 
+
+
+###Pros :thumbsup:
 - Snappy interactions via client side rendering
 
 - Fully customizable interfaces/markup
 
 - Easily swappable front-end/back-end
 
-- Security, _generally_ :lock:
-
----
-
-#Fully decoupled cons :thumbsdown:
+###Cons :thumbsdown:
 
 - Missing out on some of Drupal's best features
 
+- JS reliance, _generally_
+
 - SEO and crawler drawbacks, _generally_
 
-- Another framework to learn, develop,maintain
-
-- Complexity of hosting, _generally_
-
-- JS reliance, _generally_
 
 ^Editing in-place, menu system, routing, built-in login, built-in search, built-in 404/403. All things you’d need to rebuild.d
 
@@ -168,13 +171,11 @@ Think: Single page apps (SPAs).
 
 ^Lots of mobile browses still have trouble with JS
 
-^Proxy browsers, opera mini etc.
-
 ---
 
 #Doesn't need to be all or nothing
 
-###You can leverage the strength of both :muscle:
+###We leveraged the strength of both :muscle:
 
 ---
 
@@ -187,52 +188,63 @@ Some sections of site are separated for responsive interfaces, Drupal handles re
 Think: dashboards, calculators, applets.
 
 ---
-#Hybrid pros :thumbsup:
+
+![left fit](images/hybrid-diagram.png)
+
+#Hybrid 
+
+###Pros :thumbsup:
 
 - Speedy interfaces via JS when needed
 - Sturdy Drupal rendering when not
-- Basically, upsides of both
 - Rollout in stages
 
----
-#Hybrid cons :thumbsdown:
+###Cons :thumbsdown:
 
-- Still requires another framework to learn,develop,maintain
 - SEO and crawler downsides (avoidable)
+- Still requires another framework to learn,develop,maintain
+
 
 ---
 
 #Calendar Requirements
-
--Toggle months
--Quick event popup
--Filtering
+ 
+- Toggle months
+- Filtering
+- Quick event popup
+- Snappy interactions
+- Alternate list view mode
 
 
 ![left fit](images/comp--calendar.png)
 
+---
+
+#Calendar Requirements cont.
+ 
+- Toggle months
+- Filtering
+- Quick event popup
+- Snappy interactions
+- **Alternate list view mode**
+
+![left fit](images/comp-calendar--list.png)
 
 
 ---
 
-#Calendar Requirements
-
-
-![left fit](images/comp-calendar--list.png)
-
-- Alternate list view mode
-
+![fit](videos/bric.mov)
 
 ---
 
 #Calendar Implementation
 
--API via custom module
--ReactJS frontend
--Redux state management
--Gulp to transform ES6 => ES5
--Robust API caching
--Server-side rendering (kinda)
+- API via custom module
+- ReactJS frontend
+- Redux state management
+- Gulp to transform ES6 => ES5
+- Robust API caching
+- Server-side rendering w/ view
 
 ----
 
@@ -256,30 +268,36 @@ Think: dashboards, calculators, applets.
 
 #API
 
-- Served up all data at once
+- Served up all data at once (for performance)
   - Reduced asynchronous requests
 
-- Drupal's schema doesn't lend itself to API creation
+- Drupal DB schema doesn't lend itself to API creation
 
-- Many ways to create APIs in Drupal
+- We prefered using a custom module + menu hook
 
-  - We prefered using a custom module + menu hook
+  - Though many ways to create APIs in Drupal
 
 ---
 
 #API Caching
 
-- Set cache after expensive query
 
-- Clear _and_ rebuild cache on content update, insertion
+
+- Set cache after expensive query
 
 - Drupal static cache + page cache + Varnish
 
+- Clear _and_ rebuild cache on node update, insertion
+
+![left inline](images/cache-busting.png)
+
 ---
 
-![left fit](images/api-cache.png)
+![left fit](images/api-varnish-cache.png)
 
-#Basic API Caching
+#BRIC API Caching
+
+Redundancies to ensure user never requests from DB directly, always a cached version available 
 
 ---
 
@@ -289,8 +307,8 @@ Think: dashboards, calculators, applets.
 
 n = 10, 600+ nodes w/17 fields each, 46kb
 
-
 ---
+
 ![fit](videos/bric.mov)
 
 ^Two view modes, decoupled makes it esasy,same data
@@ -299,51 +317,82 @@ n = 10, 600+ nodes w/17 fields each, 46kb
 
 #Server-side rendering
 
-- Markup is generated for _initial_ render
+- Content is generated for **initial** render
 
 - Client handles subsequent renders
 
-- Not waiting for JS framework bootstrap :fire:
-
 - SEO and crawler benefits 🤖
 
-^Remember when I mentioned server side rendering earlier?
-
-^SSR is big deal
-
-^React, Angular2, riotjs and more frameworks support this now
-
-^Talk doesn't do it justice
+- Decent JS fallback
 
 ----
 
-#Server-side rendering implementation
+##Server-side rendering implementation
 
-- Simple solution? Use a view
+Simple solution? Use a view
 
 ^ More robust solution? Add a node server in your stack
 
 ![left fit](images/bric-nojs-view.png)
 
-^Personally never implemented second option, modern frameworks offer it, typically run on node server
+^Simple solution not bad
 
-^Limited hosting resources? Simple solution not bad
+^Limited hosting resources, limited time
 
-^Due to limited time and resources, went with a view
+^More time put a node.js stack in there somewhere
 
 ___
 
-###Server-side rendering: simple
+###BRIC server-side rendering
 
 ![inline](images/bric-nojs-code.png)
 
 ---
 
-###Server-side rendering: simple
+###BRIC server-side rendering
 ![inline](videos/bric_nojs.mov)
 
 
+---
 
+##More hybrid approach success
+
+![inline](videos/education-courses.mov)
+
+^Custom filters
+
+^Snappy interactions
+
+^Custom filters
+
+^Finite data set
+
+---
+
+#Hybrid approach failure
+
+##Blog
+
+- Ended up recreating functionality
+  - Pagination
+  - View, filters, attachments
+- Extra work for marginal returns
+- More difficult to maintain
+- Ultimately scrapped
+
+---
+
+#Takeaways  :sunglasses:
+
+The headless approach isn’t about following the trend and applying it haphazardly. It’s about engineering a product using the best of a coupled and decoupled approach that can leverage the power of all the tools and skills at your disposal. 
+
+---
+
+#Takeaways  :sunglasses:
+
+...but with that said, the hybrid approach was extremely valuable with BRIC.
+
+^Since it's not all or nothing, there's little investment and you can start using it on your site today.
 
 
 
