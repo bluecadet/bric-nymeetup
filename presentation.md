@@ -34,10 +34,11 @@
 
 #BRIC Overview
 
--Brooklyn based
--Public arts education courses
--Lots of quality events
--TV Network home to in-house shows
+-BBrooklyn-based public arts organization
+-Public media education
+-Lots of quality events,performances, exhibitions
+-Public access television
+-Diverse offerings and audiences within and beyond Brookyln
 
 ---
 
@@ -232,19 +233,19 @@ Think: dashboards, calculators, applets.
 
 #Including app into template
 
-![inline](diagrams/app-template-diagram2.png)
+![inline](images/app-template-diagram2.png)
 
 ----
 
 #Including app into template
 
-![inline](diagrams/app-include.png)
+![inline](images/include-code.png)
 
 ----
 
 #App file structure
 
-![inline](diagrams/file-structure.png)
+![inline](images/file-structure.png)
 
 ----
 
@@ -271,7 +272,7 @@ Think: dashboards, calculators, applets.
 
 ---
 
-![left fit](diagrams/api-cache.png)
+![left fit](images/api-cache.png)
 
 #Basic API Caching
 
@@ -279,7 +280,7 @@ Think: dashboards, calculators, applets.
 
 #API Caching Results 🤓
 
-![inline](diagrams/caching-results.png)
+![inline](images/caching-results.png)
 
 n = 10, 600+ nodes w/17 fields each, 46kb
 
@@ -317,7 +318,7 @@ n = 10, 600+ nodes w/17 fields each, 46kb
 
 ^ More robust solution? Add a node server in your stack
 
-![left fit](diagrams/bric-nojs-view.png)
+![left fit](images/bric-nojs-view.png)
 
 ^Personally never implemented second option, modern frameworks offer it, typically run on node server
 
@@ -329,7 +330,7 @@ ___
 
 ###Server-side rendering: simple
 
-![inline](diagrams/bric-nojs-code.png)
+![inline](images/bric-nojs-code.png)
 
 ---
 
