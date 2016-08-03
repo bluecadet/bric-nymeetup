@@ -555,52 +555,8 @@ function bric_settings_preprocess_entity(&$vars, $hook) {
 ^ hook\_preprocess\_entity
 target paragraphs_item entity
 target the bundle
-
----
-
-``` php
-function bric_settings_preprocess_entity(&$vars, $hook) {
-  if ($vars['entity_type'] == 'paragraphs_item') {
-    if ($vars['paragraphs_item']->bundle == 'visit_bric') {
-      // Grab settings variable.
-      $settings = variable_get('bric_settings_visit_bric', array());
-...
-    }
-  }
-}
-
-```
-
-^ hook\_preprocess\_entity
-target paragraphs_item entity
-target the bundle
-grab settings variable
-
----
-
-``` php
-
-      // Build content array
-      $vars['content']['bg_image'] = $bg_image_render_array;
-
-      $vars['content']['address'] = array(
-        '#markup' => check_markup($settings['address']['value'], $settings['address']['format']),
-      );
-      $vars['content']['hours'] = array(
-        '#markup' => check_markup($settings['hours']['value'], $settings['hours']['format']),
-      );
-
-      $vars['content']['notes'] = ...
-
-
-```
-
-^ hook\_preprocess\_entity
-target paragraphs_item entity
-target the bundle
 grab settings variable
 now process those fields
-
 
 ---
 
@@ -649,6 +605,10 @@ now process those fields
 
 ^ Paragraphs can contain paragraphs that can contain paragraphs, etc.
 
+^ If your site doesn't warrant using it, don't!
+
 ---
 
 # Thanks!
+
+^ Thanks to Ben for inviting us and giving us this opportunity.
