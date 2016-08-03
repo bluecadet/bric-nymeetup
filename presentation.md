@@ -429,7 +429,7 @@ As the developer, you need to make the call. I'd advise to make it early on.
 
 ---
 
-![fit](images/bric_tv_page_split.png)
+![fit](images/bric_tv_page_split2.png)
 
 ^ Later we realized, we wanted this one section to always be at the footer. We pulled it out the body paragraph field and added a 'Footer callout' field at the bottom.
 
@@ -437,7 +437,7 @@ As the developer, you need to make the call. I'd advise to make it early on.
 
 ---
 
-![fit](images/body_split.png)
+![fit](images/body_split2.png)
 
 ^ Detail pages
 
@@ -478,7 +478,7 @@ Youtube link
 
 ---
 
-![fit](images/more_custom_bundles.png)
+![fit](images/more_custom_bundles2.png)
 
 ^ First, we have display of taxonomy terms.
 
