@@ -19,16 +19,14 @@
 ---
 
 # Williamson Vedder
-### Developer, adj Professor Temple U 
+### Developer, adj Professor Temple U
 
 # Pete Inge
-### Senior Developer 
+### Senior Developer
 
 ![inline  110%](images/bc-logo.png)
 
 ^Bluecadet is an Emmy Award-winning digital agency that creates world-class websites, mobile apps, interactive installations, and immersive environments.
-
-
 
 ---
 
@@ -39,20 +37,27 @@
 -Lots of quality events
 -TV Network home to in-house shows
 
+^Will
+
 ---
 
 #BRIC Project
 ##Moderately Large
+-D7 Site
+-Migrate from custom CMS
 -13 Content Types
 -17 Views
 -Thousands of nodes
 
+^Pete
+
 ---
 
 #BRIC Project - Focuses
-##Moderately Large
 -Hybrid headless components (calendars, course listings)
 -Modular layout via Paragraphs
+
+^ Will
 
 ---
 
@@ -94,7 +99,7 @@ Hard separation between theming layer and rest of CMS. Drupal acts as an API to 
 
 #Non-headless (traditional)
 
-No hard separation. Drupal handles data processing and theming. 
+No hard separation. Drupal handles data processing and theming.
 
 Think: most Drupal sites now. Business as usual.
 
@@ -117,7 +122,7 @@ Think: most Drupal sites now. Business as usual.
 
 - Modules are usually great but difficult to extend
 
-- Modules blur data-theming line 
+- Modules blur data-theming line
 
 ---
 
@@ -125,16 +130,16 @@ Think: most Drupal sites now. Business as usual.
 
 #Fully Decoupled
 
-Full separation between data layer and front-end layer. 
+Full separation between data layer and front-end layer.
 
 Think: Single page apps (SPAs).
 
 ---
 
 #Fully decoupled pros :thumbsup:
-- Snappy interactions via client side rendering 
+- Snappy interactions via client side rendering
 
-- Fully customizable interfaces/markup 
+- Fully customizable interfaces/markup
 
 - Easily swappable front-end/back-end
 
@@ -176,7 +181,7 @@ Think: Single page apps (SPAs).
 
 #Hybrid
 
-Some sections of site are separated for responsive interfaces, Drupal handles rest of the theming. 
+Some sections of site are separated for responsive interfaces, Drupal handles rest of the theming.
 
 Think: dashboards, calculators, applets.
 
@@ -196,7 +201,7 @@ Think: dashboards, calculators, applets.
 
 ---
 
-#Calendar Requirements 
+#Calendar Requirements
 
 -Toggle months
 -Quick event popup
@@ -209,7 +214,7 @@ Think: dashboards, calculators, applets.
 
 ---
 
-#Calendar Requirements 
+#Calendar Requirements
 
 
 ![left fit](images/comp-calendar--list.png)
@@ -356,6 +361,8 @@ Show of hands, who is familiar with P module?
 
 # Paragraphs!
 
+^ LEGO Bricks example. Many types/colors of bricks, can be combined in diffrent ways.
+
 ^ Today I want to:
 Walk us through our process with BRIC.
 Second some Cool stuff we did.
@@ -416,7 +423,7 @@ As the developer, you need to make the call. I'd advise to make it early on.
 
 ---
 
-![fit](images/designs_split.png)
+![fit](images/designs_split2.png)
 
 ^ We sliced up the different sections.
 
@@ -425,8 +432,6 @@ As the developer, you need to make the call. I'd advise to make it early on.
 ![fit](images/bric_tv_page_split.png)
 
 ^ Later we realized, we wanted this one section to always be at the footer. We pulled it out the body paragraph field and added a 'Footer callout' field at the bottom.
-
-^ That is a very quick overview of how we decided to use PARAGRAPHS. Next, some of the fun stuff.
 
 ^ So these so far have been landing pages with What could be blocks. They are callouts to other sections. But you can even breakup detailed content pages into paragraphs as well.
 
@@ -443,6 +448,12 @@ Special Button
 Text
 Youtube link
 
+^ ... And here is a video showing you a little bit.
+
+---
+
+![autoplay mute](videos/bric_abc.mov)
+
 ^ You can end up with a lot of bundles.
 
 ---
@@ -450,6 +461,8 @@ Youtube link
 ![fit](images/bundles.png)
 
 ^ Here is a list of all our bundles
+
+^ 25 Paragraph Bundles and growing...
 
 ---
 
@@ -486,11 +499,17 @@ Youtube link
 
 ## 'Visit BRIC' Bundle
 
-![inline](images/visit_bric_admin2.png)
+![inline](images/visit_bric_admin3.png)
 
 ^ Here is what the admin sees.
 
 ^ SIDE NOTE: Now this can also be done with some custom fields, maybe a title or background image, etc, and global content.
+
+^ How do we get the content there?
+
+---
+
+![autoplay mute](videos/bric_bundle_edit.mov)
 
 ^ How do we get the content there?
 
@@ -615,6 +634,7 @@ now process those fields
 1. Modular
 1. Reorder content
 1. Reusability
+1. Less frustrating editor experience
 1. Scales for easy future development
 
 ^ Greatest flexibility with least complexity
