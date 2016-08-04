@@ -662,8 +662,7 @@ now process those fields
 # Thanks!
 
 
-github.com/willvedd
+github.com/willvedd/NYC-Drupal-Meetup
 
-(Haven't posted deck yet)
 
 ^ Thanks to Ben for inviting us and giving us this opportunity.
